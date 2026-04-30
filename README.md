@@ -1,18 +1,46 @@
-# aws Plugin
+# AWS Plugin
 
-`aws` is an external plugin module that provides AWS-backed target kinds.
+`proxygw-aws` is an external plugin module that provides AWS-backed target kinds.
+
+## Plugin Setup
+
+Add the plugin to the `proxygw` daemon build in the main `proxygw` repository:
+
+1. Add this module as a dependency:
+
+```sh
+go get github.com/UselessMnemonic/proxygw-aws@latest
+```
+
+2. Register the plugin in `plugin.yaml`:
+
+```yaml
+plugins:
+  github.com/UselessMnemonic/proxygw-aws: aws
+```
+
+3. Regenerate the plugin import file and rebuild the daemon:
+
+```sh
+go generate ./cmd/proxygw
+make proxygw
+```
+
+The plugin registers under the module path
+`github.com/UselessMnemonic/proxygw-aws` and uses the `aws` namespace, so
+target kinds are referenced as `aws:...`.
 
 ## Exported Kinds
 
 Targets:
 
-- `aws:ec2`: starts EC2 instances when the target warms and stops them when the
+- `ec2`: starts EC2 instances when the target warms and stops them when the
   target drains. Stopping can optionally request EC2 hibernation.
 
-There is no plugin-level configuration for `aws`. AWS credentials and defaults
+There is no plugin-level configuration for this plugin. AWS credentials and defaults
 come from the AWS SDK for Go v2 default credential chain.
 
-## aws:ec2 Target
+## ec2 Target
 
 Example:
 
