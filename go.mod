@@ -3,7 +3,7 @@ module github.com/UselessMnemonic/proxygw-aws
 go 1.25.0
 
 require (
-	github.com/UselessMnemonic/proxygw v0.0.0-20260430074524-359ffe318c71
+	github.com/UselessMnemonic/proxygw v0.2.0
 	github.com/aws/aws-sdk-go-v2 v1.41.6
 	github.com/aws/aws-sdk-go-v2/config v1.32.16
 	github.com/aws/aws-sdk-go-v2/service/ec2 v1.299.0
