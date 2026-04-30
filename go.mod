@@ -1,4 +1,4 @@
-module github.com/UselessMnemonic/proxygw/plugins/aws
+module github.com/UselessMnemonic/proxygw-aws
 
 go 1.25.0
 
@@ -22,14 +22,4 @@ require (
 	github.com/aws/aws-sdk-go-v2/service/ssooidc v1.35.20 // indirect
 	github.com/aws/aws-sdk-go-v2/service/sts v1.42.0 // indirect
 	github.com/aws/smithy-go v1.25.0 // indirect
-	github.com/google/go-cmp v0.7.0 // indirect
-	github.com/google/nftables v0.3.0 // indirect
-	github.com/mdlayher/netlink v1.11.1 // indirect
-	github.com/mdlayher/socket v0.6.0 // indirect
-	github.com/pkg/errors v0.9.1 // indirect
-	github.com/ti-mo/conntrack v0.6.0 // indirect
-	github.com/ti-mo/netfilter v0.5.3 // indirect
-	golang.org/x/net v0.53.0 // indirect
-	golang.org/x/sync v0.20.0 // indirect
-	golang.org/x/sys v0.43.0 // indirect
 )

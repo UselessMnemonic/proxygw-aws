@@ -3,7 +3,7 @@ package aws
 import (
 	"github.com/UselessMnemonic/proxygw/pkg/engine"
 	"github.com/UselessMnemonic/proxygw/plugin"
-	"github.com/UselessMnemonic/proxygw/plugins/aws/targets"
+	"github.com/UselessMnemonic/proxygw-aws/targets"
 )
 
 func init() {
