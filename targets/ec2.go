@@ -115,6 +115,7 @@ func (h *EC2Handler) waitForState(ctx context.Context, state types.InstanceState
 		case <-ctx.Done():
 			return fmt.Errorf("wait for ec2 instances to reach %s: %w", state, ctx.Err())
 		case <-ticker.C:
+			h.logger.Debug("polling ec2 instances", "instance_ids", h.instanceIDs)
 		}
 	}
 }
@@ -209,7 +210,7 @@ func NewEC2Handler(name string, options map[string]any) (target.Handler, error) 
 		hibernate:    hibernate,
 		startTimeout: startTimeout,
 		stopTimeout:  stopTimeout,
-		logger:       slog.Default().With("component", "aws:ec2", "name", name, "region", cfg.Region),
+		logger:       slog.Default().With("handler", "ec2", "name", name, "region", cfg.Region),
 	}, nil
 }
 
