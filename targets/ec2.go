@@ -210,7 +210,7 @@ func NewEC2Handler(name string, options map[string]any) (target.Handler, error) 
 		hibernate:    hibernate,
 		startTimeout: startTimeout,
 		stopTimeout:  stopTimeout,
-		logger:       slog.Default().With("handler", "ec2", "name", name, "region", cfg.Region),
+		logger:       slog.Default().With("component", "handler", "target", name, "region", cfg.Region),
 	}, nil
 }
 
